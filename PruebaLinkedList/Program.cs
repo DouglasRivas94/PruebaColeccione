@@ -43,7 +43,7 @@ concatenar(color, color2);
 
 void concatenar<T>(LinkedList<T> color, LinkedList<T> color2)
 {
-    Console.WriteLine("------------------------");
+    Console.WriteLine("---------------------------");
     foreach(T item in color2)
     {
         color.AddLast(item);
