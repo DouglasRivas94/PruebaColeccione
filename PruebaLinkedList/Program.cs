@@ -56,15 +56,43 @@ void concatenar<T>(LinkedList<T> color, LinkedList<T> color2)
 }
 
 //converitr los elementos de color en mayusculas
+Mayusculas<string>(color);
 
-Mayusculas(color);
-
-void Mayusculas<T>(LinkedList<T> color)
+void Mayusculas<T>(LinkedList<string> color)
 {
-    LinkedListNode<T> node = color.First;
+    LinkedListNode<string> node = color.First;
     while(node != null)
     {
-
         node = node.Next;
+    }
+}
+
+//Imprimir lista en orden inverso
+Inverso(color);
+
+void Inverso<T>(LinkedList<T> color)
+{
+    LinkedListNode<T> nodos = color.Last;
+
+    while(nodos != null)
+    {
+        Console.WriteLine($"{nodos.Value} ");
+        nodos = nodos.Previous;
+    }
+    Console.WriteLine();
+}
+
+//eliminar de la cadena 1 los colores Negro y beige
+Eliminar(color, "Beige", "Gris");
+
+void Eliminar<T>(LinkedList<T> color, T Inicial, T Final)
+{
+    LinkedListNode<T> nodoA = color.Find(Inicial);
+    LinkedListNode<T> nodoB = color.Find(Final);
+
+    while((nodoA.Next!= null) && (nodoA.Next != nodoB))
+    {
+        color.Remove(nodoA.Next);
+
     }
 }
